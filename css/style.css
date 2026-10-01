@@ -737,3 +737,8 @@ main {
     font-size: 11pt;
   }
 }
+.site-header .brand img {
+    width: 150px;
+    height: auto;
+    max-width: 100px;
+}
