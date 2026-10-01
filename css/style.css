@@ -1,0 +1,739 @@
+:root {
+  color-scheme: light;
+  --ink: #18342d;
+  --muted: #687c75;
+  --green: #24765d;
+  --green-dark: #195b46;
+  --green-soft: #e8f3ed;
+  --line: #e5ece7;
+  --paper: #fff;
+  --page: #f4f7f2;
+  --shadow: 0 16px 44px rgba(31, 65, 51, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--page);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.brand-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  max-width: 1120px;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(220, 231, 222, 0.85);
+}
+
+.site-header .app-container {
+  min-height: 72px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--ink);
+  font-size: 1.2rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  color: #fff;
+  background: var(--green);
+  border-radius: 11px;
+  font-size: 1.1rem;
+  letter-spacing: -0.06em;
+}
+
+.header-note,
+.site-footer {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+main {
+  flex: 1;
+}
+
+.welcome-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 5.25rem);
+  align-items: center;
+  padding: 2.2rem 0 3rem;
+}
+
+.welcome-copy {
+  max-width: 440px;
+  padding: 1rem 0;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.welcome-copy h1 {
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(2.35rem, 5vw, 3.8rem);
+  font-weight: 760;
+  letter-spacing: -0.065em;
+  line-height: 1.08;
+}
+
+.welcome-copy h1 span {
+  color: var(--green);
+}
+
+.welcome-description {
+  max-width: 400px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.access-card,
+.content-card {
+  background: var(--paper);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.section-title {
+  color: var(--ink);
+  font-size: 1.3rem;
+  font-weight: 720;
+  letter-spacing: -0.035em;
+}
+
+.form-label {
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.form-control {
+  min-height: 46px;
+  border-color: #dce6de;
+  border-radius: 10px;
+  color: var(--ink);
+}
+
+.form-control:focus {
+  border-color: #70a98e;
+  box-shadow: 0 0 0 0.2rem rgba(36, 118, 93, 0.13);
+}
+
+.btn {
+  min-height: 42px;
+  border-radius: 10px;
+  font-weight: 650;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--green);
+  --bs-btn-border-color: var(--green);
+  --bs-btn-hover-bg: var(--green-dark);
+  --bs-btn-hover-border-color: var(--green-dark);
+  --bs-btn-active-bg: var(--green-dark);
+  --bs-btn-active-border-color: var(--green-dark);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--green);
+  --bs-btn-border-color: #9abdaa;
+  --bs-btn-hover-bg: var(--green);
+  --bs-btn-hover-border-color: var(--green);
+  --bs-btn-active-bg: var(--green-dark);
+  --bs-btn-active-border-color: var(--green-dark);
+}
+
+.room-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.room-choice {
+  min-width: 0;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.choice-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.85rem;
+  color: var(--green);
+  background: var(--green-soft);
+  border-radius: 11px;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.join-icon {
+  font-size: 1.1rem;
+}
+
+.room-choice h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.room-choice p,
+.form-text {
+  color: var(--muted);
+  font-size: 0.81rem;
+  line-height: 1.55;
+}
+
+.form-text {
+  margin-top: -0.25rem;
+}
+
+.room-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.65rem 1.8rem;
+  color: #fff;
+  background: var(--green);
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(36, 118, 93, 0.17);
+}
+
+.room-banner .eyebrow {
+  color: #c6e4d5;
+}
+
+.room-banner h1 {
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-weight: 730;
+  letter-spacing: -0.045em;
+}
+
+.room-code {
+  display: inline-block;
+  margin-left: 0.25rem;
+  padding: 0.12rem 0.5rem 0.18rem;
+  color: var(--green-dark);
+  background: #fff;
+  border-radius: 8px;
+  font-size: 0.78em;
+  letter-spacing: 0.07em;
+  vertical-align: 0.1em;
+}
+
+.room-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #e3f0e9;
+  font-size: 0.9rem;
+}
+
+.room-status strong {
+  color: #fff;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  flex: 0 0 auto;
+  background: #9ce2ae;
+  border-radius: 50%;
+}
+
+.room-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.room-actions .btn {
+  min-height: 40px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.room-actions .btn-light {
+  color: var(--green-dark);
+}
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-count,
+.live-label {
+  padding: 0.35rem 0.65rem;
+  color: var(--green-dark);
+  background: var(--green-soft);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.live-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.live-label .status-dot {
+  width: 7px;
+  height: 7px;
+  background: #36a76d;
+}
+
+.add-item-form {
+  display: grid;
+  grid-template-columns: minmax(140px, 1.4fr) minmax(82px, 0.6fr) minmax(105px, 0.8fr) auto;
+  gap: 0.7rem;
+  align-items: end;
+}
+
+.form-field {
+  min-width: 0;
+}
+
+.form-field .form-label {
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+}
+
+.form-field .form-control {
+  min-height: 43px;
+  font-size: 0.9rem;
+}
+
+.add-button {
+  min-height: 43px;
+  padding: 0.5rem 0.9rem;
+  white-space: nowrap;
+}
+
+.form-feedback {
+  color: #a12b2b;
+  font-size: 0.84rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.cart-item-main {
+  min-width: 0;
+}
+
+.cart-item-name {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.cart-item-details {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.cart-item-side {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cart-item-price {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.remove-button {
+  min-height: 34px;
+  padding: 0.3rem 0.55rem;
+  color: #a33c37;
+  border: 1px solid #f0d8d5;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.77rem;
+}
+
+.remove-button:hover {
+  background: #fff4f2;
+}
+
+.empty-state {
+  padding: 1.5rem 1rem;
+  color: var(--muted);
+  background: #f7f9f7;
+  border: 1px dashed #dbe5dd;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.cart-total-row strong {
+  color: var(--green-dark);
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+}
+
+.activity-list {
+  max-height: 530px;
+  overflow-y: auto;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.activity-entry {
+  position: relative;
+  padding: 0 0 1.1rem 1.25rem;
+  border-left: 1px solid #dce8de;
+}
+
+.activity-entry:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.activity-entry::before {
+  position: absolute;
+  top: 0.2rem;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  background: #58a27a;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  content: "";
+}
+
+.activity-text {
+  color: var(--ink);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.activity-text strong {
+  font-weight: 700;
+}
+
+.activity-time {
+  display: block;
+  margin-top: 0.25rem;
+  color: #87958f;
+  font-size: 0.72rem;
+}
+
+.sync-note {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.sync-note span {
+  margin-right: 0.25rem;
+  color: var(--green);
+  font-size: 1rem;
+}
+
+.receipt-content {
+  padding: 1.15rem;
+  background: #f8faf8;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.receipt-heading {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+.receipt-room {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.receipt-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+}
+
+.receipt-item-name {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.receipt-item-detail {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.receipt-row-total {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.45rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #ccdacf;
+  font-size: 0.95rem;
+  font-weight: 750;
+}
+
+.receipt-empty {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.site-footer {
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(220, 231, 222, 0.85);
+  font-size: 0.78rem;
+}
+
+.site-footer span {
+  padding: 0 0.3rem;
+}
+
+@media (max-width: 991.98px) {
+  .welcome-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .welcome-copy {
+    max-width: none;
+    padding: 0;
+  }
+
+  .welcome-description {
+    max-width: 620px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header-note {
+    font-size: 0.75rem;
+  }
+
+  .welcome-section {
+    padding-top: 1.2rem;
+  }
+
+  .welcome-copy h1 {
+    font-size: 2.35rem;
+  }
+
+  .access-card .card-body {
+    padding: 1.25rem !important;
+  }
+
+  .room-choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-choice {
+    min-height: auto;
+  }
+
+  .room-choice .btn {
+    margin-top: 0.5rem !important;
+  }
+
+  .room-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  .room-actions {
+    width: 100%;
+  }
+
+  .room-actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .content-card .card-body {
+    padding: 1.2rem !important;
+  }
+
+  .add-item-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .item-name-field {
+    grid-column: 1 / -1;
+  }
+
+  .add-button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .cart-item {
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .cart-item-side {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .print-button {
+    min-height: 38px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media print {
+  @page {
+    margin: 18mm;
+  }
+
+  body,
+  .app-shell {
+    min-width: 0;
+    min-height: 0;
+    background: #fff;
+  }
+
+  .site-header,
+  .site-footer,
+  #access-screen,
+  .room-banner,
+  #room-message,
+  .content-card:not(#receipt-section),
+  .sync-note {
+    display: none !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #receipt-section,
+  #receipt-section * {
+    visibility: visible !important;
+  }
+
+  #receipt-section {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    margin: 0 !important;
+    box-shadow: none;
+  }
+
+  #receipt-section .card-body {
+    padding: 0 !important;
+  }
+
+  #receipt-section .section-heading-row {
+    display: none !important;
+  }
+
+  #receipt-section .receipt-content {
+    padding: 0;
+    background: #fff;
+    border: 0;
+  }
+
+  .receipt-heading {
+    font-size: 20pt;
+  }
+
+  .receipt-row,
+  .receipt-room,
+  .receipt-total {
+    font-size: 11pt;
+  }
+}
